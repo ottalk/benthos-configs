@@ -1,0 +1,13 @@
+input:
+  label: ""
+  socket_server:
+    network: tcp
+    address: 0.0.0.0:9998
+pipeline:
+  processors:
+    - mapping: |
+        root = this.filter(RECORD_TYPE != 3)
+output:
+  label: ""
+  stdout:
+    codec: lines
