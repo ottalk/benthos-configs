@@ -1,0 +1,13 @@
+input:
+  label: ""
+  socket_server:
+    network: tcp
+    address: 0.0.0.0:9998
+    scanner:
+      chunker:
+        size: 65536
+
+output:
+  label: ""
+  stdout:
+    codec: lines
