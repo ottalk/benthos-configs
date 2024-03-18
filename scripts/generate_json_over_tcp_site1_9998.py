@@ -12,6 +12,8 @@ HOST, PORT = "localhost", 9998
 
 processor_list=["A","B","C","D","E"]
 
+sys_ind_list=["A","H","T"]
+
 # Create a socket (SOCK_STREAM means a TCP socket)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -35,6 +37,8 @@ while(True):
 
     processor = random.choice(processor_list)
 
+    sys_ind = random.choice(sys_ind_list)
+
     company_name=gen_data.create_company_name()
     company_division_id=random.randint(11111, 11117)
 
@@ -42,7 +46,7 @@ while(True):
 
     record_type=random.randint(1,3)
 
-    event={"HOST_DATE_TIME": curr_datetime_str,"TRANSACTION_DATETIME": est_datetime_str,"COMPANY_NAME":company_name,"COMPANY_DIVISION":company_division_id,"GUID_1": guid_1,"GUID_2": guid_2,"PROCESSOR": processor,"TRANSACTION_AMOUNT":transaction_amount,"RECORD_TYPE":record_type}
+    event={"SYS_IND": sys_ind,"HOST_DATE_TIME": curr_datetime_str,"TRANSACTION_DATETIME": est_datetime_str,"COMPANY_NAME":company_name,"COMPANY_DIVISION":company_division_id,"GUID_1": guid_1,"GUID_2": guid_2,"PROCESSOR": processor,"TRANSACTION_AMOUNT":transaction_amount,"RECORD_TYPE":record_type}
     #print(event)
     event_json=json.dumps(event)+"\n"
     try:
