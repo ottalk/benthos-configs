@@ -40,7 +40,7 @@ while(True):
 
     transaction_amount=random.randint(111, 9999)
 
-    record_type=str(random.randint(1,3))
+    record_type=random.randint(1,3)
 
     event={"HOST_DATE_TIME": curr_datetime_str,"TRANSACTION_DATETIME": est_datetime_str,"COMPANY_NAME":company_name,"COMPANY_DIVISION":company_division_id,"GUID_1": guid_1,"GUID_2": guid_2,"PROCESSOR": processor,"TRANSACTION_AMOUNT":transaction_amount,"RECORD_TYPE":record_type}
     #print(event)

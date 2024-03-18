@@ -6,7 +6,8 @@ input:
 pipeline:
   processors:
     - mapping: |
-        root = this.filter(RECORD_TYPE != 3)
+        root = this
+        root = if this.RECORD_TYPE == 3 { deleted() }
 output:
   label: ""
   stdout:
